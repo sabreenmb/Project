@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Contact Us</title>
+    </head>
+    <body>
+        <header>
+            <h1>Contact Us</h1>
+            <nav>
+
+            </nav>
+        </header>        
+        <section id="form">
+            <form method="post" action="">
+                <p>
+                    <label>Frist Name:
+                        <input name="fristName" type="text" placeholder="Enter your frist name" size="25" required>
+                    </label>
+                </p>
+                <p>
+                    <label>Last Name
+                        <input name="lastName" type="text" placeholder="Enter your last name" size="25">
+                    </label>
+                </p>
+                <p>
+                    <label>Email:
+                        <input name="email" type="text"  size="25"
+                        pattern="[a-zA-Z0-9_\-\.]+@[a-zA-Z0-9_\-\.]+\.[a-zA-Z]{2,5}" placeholder="someone@example.com" required>
+                    </label>
+                </p>
+                <p>
+                    <label>Mobile
+                        <input name="mobile" type="text"  size="25"  pattern="[0][5][0-9]{8}" placeholder="05********"required>
+                    </label>
+                </p>
+                <p>
+                    <label>Enter your birth:
+                        <input name="dateOfBirth" type="date" placeholder="Enter your birth date" size="25">
+                    </label>
+                </p>
+                <p>Select your gender:
+                    <label>Femail
+                        <input name="gender" type="radio"  value="Femail" checked>
+                    </label>
+                    <label>Mail
+                        <input name="gender" type="radio"  value="Mail">
+                    </label>
+                </p>                
+                <p>
+                    <label>Language of communication:
+                        <select name="language">
+                            <option selected>Arabic</option>
+                            <option>English</option>
+                            <option>French</option>
+                        </select>
+                    </label>
+                </p>
+                <p>
+                    <label>The message:<br>
+                        <textarea name="message" placeholder="Enter your message here" rows="4" cols="20" required>
+                        </textarea>
+                    </label>
+                </p>
+                <p>
+                    <input type="submit" value="Submet">
+                    <input type="reset" value="Clear">
+                </p>
+            </form>
+        </section>
+    </body>
+</html>
