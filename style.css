@@ -53,15 +53,14 @@ nav ul {
   position: relative;
   display: flex;
   align-items: flex-end;
-  justify-content: center;
-  
-    float: right;
+  justify-content: flex-end;
 
 }
 
 nav ul li {
   padding: 3px 10px;
   list-style-type: none;
+  
 }
 
 nav ul li a {
