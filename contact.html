@@ -7,10 +7,8 @@
     </head>
     <body>
         <header>
-           
-            <a href="#"><img class="Logo" src="" alt = "logo"></a>
-
-            <nav class="navBar">
+            <nav>
+                <h3 class="webName">Bowling Empire</h3>
                 <ul>
                     <li><a href="index.html">Welcome</a></li>
                     <li><a href="main.html">Home</a></li>
@@ -23,42 +21,42 @@
             <h1>Contact Us</h1>
             <form method="post" action="">
                 <p>
-                    <label>Frist Name:
-                        <input name="fristName" type="text" placeholder="Enter your frist name" size="25" required>
+                    <label>First Name:
+                        <input name="firsttName" type="text" id="firstName" placeholder="Enter your first name" size="25" required>
                     </label>
                 </p>
                 <p>
                     <label>Last Name
-                        <input name="lastName" type="text" placeholder="Enter your last name" size="25">
+                        <input name="lastName" type="text" id="lastName" placeholder="Enter your last name" size="25">
                     </label>
                 </p>
                 <p>
                     <label>Email:
-                        <input name="email" type="text"  size="25"
+                        <input name="email" type="text" id="email" size="25"
                         pattern="[a-zA-Z0-9_\-\.]+@[a-zA-Z0-9_\-\.]+\.[a-zA-Z]{2,5}" placeholder="someone@example.com" required>
                     </label>
                 </p>
                 <p>
                     <label>Mobile
-                        <input name="mobile" type="text"  size="25"  pattern="[0][5][0-9]{8}" placeholder="05********"required>
+                        <input name="mobile" type="text" id="mobile" size="25" pattern="[0][5][0-9]{8}" placeholder="05********"required>
                     </label>
                 </p>
                 <p>
                     <label>Enter your birth:
-                        <input name="dateOfBirth" type="date" placeholder="Enter your birth date" size="25">
+                        <input name="dateOfBirth" type="date" id="dateOfBirth" placeholder="Enter your birth date" size="25" required>
                     </label>
                 </p>
                 <p>Select your gender:
-                    <label>Femail
-                        <input name="gender" type="radio"  value="Femail" checked>
+                    <label>Female
+                        <input name="gender" type="radio" id="female" value="female" checked>
                     </label>
-                    <label>Mail
-                        <input name="gender" type="radio"  value="Mail">
+                    <label>Male
+                        <input name="gender" type="radio" id="male" value="male">
                     </label>
                 </p>                
                 <p>
                     <label>Language of communication:
-                        <select name="language">
+                        <select name="language" id="language">
                             <option selected>Arabic</option>
                             <option>English</option>
                             <option>French</option>
@@ -72,7 +70,7 @@
                     </label>
                 </p>
                 <p>
-                    <input type="submit" value="Submet">
+                    <input type="submit" value="Submit">
                     <input type="reset" value="Clear">
                 </p>
             </form>
