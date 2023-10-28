@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="style.css">
         <meta charset="utf-8">
-        <title> Contact Us</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Contact Us</title>
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
+        <div class="contactBackground">
         <header>
             <nav>
                 <h3 class="webName">Bowling Empire</h3>
@@ -16,68 +18,46 @@
                     <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </nav>
-        </header>        
-        <section id="form">
-            <h1>Contact Us</h1>
+        </header>    
+
+        <section class="container">
             <form method="post" action="">
-                <p>
-                    <label>First Name:
-                        <input name="firsttName" type="text" id="firstName" placeholder="Enter your first name" size="25" required>
-                    </label>
-                </p>
-                <p>
-                    <label>Last Name
-                        <input name="lastName" type="text" id="lastName" placeholder="Enter your last name" size="25">
-                    </label>
-                </p>
-                <p>
-                    <label>Email:
-                        <input name="email" type="text" id="email" size="25"
-                        pattern="[a-zA-Z0-9_\-\.]+@[a-zA-Z0-9_\-\.]+\.[a-zA-Z]{2,5}" placeholder="someone@example.com" required>
-                    </label>
-                </p>
-                <p>
-                    <label>Mobile
-                        <input name="mobile" type="text" id="mobile" size="25" pattern="[0][5][0-9]{8}" placeholder="05********"required>
-                    </label>
-                </p>
-                <p>
-                    <label>Enter your birth:
-                        <input name="dateOfBirth" type="date" id="dateOfBirth" placeholder="Enter your birth date" size="25" required>
-                    </label>
-                </p>
-                <p>Select your gender:
-                    <label>Female
-                        <input name="gender" type="radio" id="female" value="female" checked>
-                    </label>
-                    <label>Male
-                        <input name="gender" type="radio" id="male" value="male">
-                    </label>
-                </p>                
-                <p>
-                    <label>Language of communication:
+                <h1><b>Contact Us</b></h1>
+                <div class="contact-form">
+                    <input name="firsttName" type="text" id="firstName" placeholder="Enter your first name" required>
+                    <input name="lastName" type="text" id="lastName" placeholder="Enter your last name" required>
+                </div>
+                <div class="contact-form">
+                    <input name="email" type="text" id="email" pattern="[a-zA-Z0-9_\-\.]+@[a-zA-Z0-9_\-\.]+\.[a-zA-Z]{2,5}"
+                    placeholder="someone@example.com" required>
+                    <input name="mobile" type="text" id="mobile" pattern="[0][5][0-9]{8}" placeholder="05********"required>
+                </div>
+                <div class="contact-form">
+                    <input name="dateOfBirth" type="date" id="dateOfBirth" placeholder="Enter your birth date" required>
+                    <aside class="Radio">
+                        <label><input name="gender" type="radio" id="female" value="female" checked>Female</label>
+                        <label><input name="gender" type="radio" id="male" value="male">Male</label>
+                    </aside>
+                </div>
+                <div class="contact-form">
+                    <h4><b>The message:</b></h4>
+                    <label>
                         <select name="language" id="language">
                             <option selected>Arabic</option>
                             <option>English</option>
                             <option>French</option>
                         </select>
                     </label>
-                </p>
-                <p>
-                    <label>The message:<br>
-                        <textarea name="message" placeholder="Enter your message here" rows="4" cols="20" required>
-                        </textarea>
-                    </label>
-                </p>
-                <p>
-                    <input type="submit" value="Submit">
-                    <input type="reset" value="Clear">
-                </p>
+                    <textarea name="message" id="message" placeholder="Enter your message here" required></textarea>
+                </div>
+                <input class="btn" type="submit" value="Submit">
+                <input class="btn" type="reset" value="Clear">
             </form>
         </section>
         
         <footer>
             <h6>&copy; 2023 Bowling Empire. All rights reserved.</h6>
         </footer>
-    </body>
+    </div>
+  </body>
 </html>
