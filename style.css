@@ -153,10 +153,15 @@ nav ul li a:hover {
     padding: 8px 16px;
     background-color: #333;
     text-decoration: none;
-    border-radius: 4px;
-    margin-top: 16px;
+    border: none;
+    border-radius: 8px;
+    margin-top: 20px;
     color: #fff;
   }
+
+.button:hover{
+  background: #797878;
+}
  
 /* Contact us page */
 .contactBackground{
@@ -287,7 +292,7 @@ textarea{
   background: #4a4747;
 }
 
-
+/* About us page */
 table{
   width: 90%;
   height:fit-content;
@@ -306,7 +311,7 @@ table, th, td {
 }
 
 thead th {
-  border-bottom: 1px solid; 
+  border-bottom: 1px solid;
 }
 thead th .title{
   margin-bottom: 5%;
@@ -342,8 +347,8 @@ tbody td h5{
  }
 .social-icons a{
   text-decoration: none;
-  font-size: 30px;
-  margin-right: 10px;
+  font-size: 32px;
+  margin-right: 12px;
   display: inline-block;
   transition: transform 0.5s ;
 
