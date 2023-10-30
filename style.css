@@ -111,6 +111,11 @@ nav ul li a:hover {
   text-align: center;
 }
 
+footer{
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: left;
+}
+
 /* main page */
 .maintBackground{
   background-color: #555859;
