@@ -41,7 +41,7 @@ nav{
 nav .webName {
   width: 20%;
   height: 100%;
-  color: white;
+  color: #F66969;
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
