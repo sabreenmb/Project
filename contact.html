@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,18 +34,18 @@
                 </div>
                 <div class="contact-form">
                     <input name="dateOfBirth" type="date" id="dateOfBirth"  required>
-                    <aside class="Radio">
-                        <label><input name="gender" type="radio" id="female" value="female" checked>Female</label>
-                        <label><input name="gender" type="radio" id="male" value="male">Male</label>
-                    </aside>
-                </div>
-                <div class="contact-form">
-                    <h4><b>The message:</b></h4>
                     <select name="language" id="language">
                         <option selected>Arabic</option>
                         <option>English</option>
                         <option>French</option>
                     </select>
+                </div>
+                <div class="contact-form">
+                    <p>The message:</p>
+                    <aside class="Radio">
+                        <label><input name="gender" type="radio" id="female" value="female" checked>Female</label>
+                        <label><input name="gender" type="radio" id="male" value="male">Male</label>
+                    </aside>
                     <textarea name="message" id="message" placeholder="Enter your message here" required></textarea>
                 </div>
                 <input class="btn" type="submit" value="Submit">
