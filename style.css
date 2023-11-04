@@ -1,3 +1,20 @@
+/* CSS HEX */
+:root{
+  --chocolate-cosmos: #551620ff;
+  --amaranth-purple: #9A1C3Cff;
+  --dark-purple: #2F1B24ff;
+  --black: #050A06ff;
+  --dark-purple-2: #261F38ff;
+
+  /* CSS HEX */
+--electric-blue: #15DFF4ff;
+--icterine: #F6FB4Bff;
+--azure-web: #F4FFFFff;
+--crimson: #D80B38ff;
+--amaranth-purple: #A40840ff;
+}
+
+
 * {
   margin: 0;
   padding: 0;
@@ -115,8 +132,14 @@ footer{
 
 /* main page */
 .maintBackground{
-  background-color: rgb(222, 217, 217);
+  background-color:  #9A1C3Cff;/*rgb(222, 217, 217);*/
 }
+/*--chocolate-cosmos: #551620ff;
+--amaranth-purple: #9A1C3Cff;
+--dark-purple: #2F1B24ff;
+--black: #050A06ff;
+--dark-purple-2: #261F38ff;
+*/
 
 .card_container{
   display: flex;
@@ -125,7 +148,7 @@ footer{
   padding: 50px 50px;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  /* background-color: rgba(255, 255, 255, 0.5); */
 }
 
 .card { 
