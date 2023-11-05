@@ -27,10 +27,10 @@ header {
   top: 0;
   /* position: relative; */
   width: 100%;
-  height: 7%;
+  height: 10%;
   /* background-color: rgba(0, 0, 0, 0.5); */
   overflow: hidden;
-  background-color:  rgba(38, 31, 56, 0.774);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 nav {
@@ -38,6 +38,8 @@ nav {
   width: 95%;
   margin: auto;
   padding-top: 1%;
+  padding-bottom: 1%;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -46,7 +48,7 @@ nav {
 nav .webName {
   width: 20%;
   height: 100%;
-  color: rgba(38, 31, 56, 0.774);
+  color:#9A1C3Cff;
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
@@ -77,7 +79,7 @@ nav ul li a {
 }
 
 nav ul li a:hover,nav ul li a.active {
-  color: rgba(38, 31, 56, 0.774);
+  color: #9A1C3Cff;
 }
 
 .index-content {
@@ -97,7 +99,7 @@ nav ul li a:hover,nav ul li a.active {
 }
 
 .elements h1 span {
-  color: #F66969;
+  color: #9A1C3Cff;
   font-size: 3.5rem;
 }
 
@@ -114,8 +116,9 @@ nav ul li a:hover,nav ul li a.active {
 }
 
 footer{
-  background-color:  rgba(85, 22, 32, 0.407);
+  background-color:   rgba(38, 31, 56, 0.949);
   height: 70px;
+  padding-top: 1.5%;
   text-align: center;
   align-items: center;
 }
@@ -123,26 +126,28 @@ footer{
 /* main page */
 .maintBackground{
   position: relative;
-  background: url("images/Bricks7.avif");
+  background: url("images/Bricks4.jpg");
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
   height: 100%;
+
   
 
-  background-color: rgba(85, 22, 32, 0.2);
   /* background-color:  rgba(192, 192, 192, 0.658); */
 }
-/*--chocolate-cosmos: #551620ff;
+/* --chocolate-cosmos: #551620ff;
 --amaranth-purple: #9A1C3Cff;
 --dark-purple: #2F1B24ff;
 --black: #050A06ff;
---dark-purple-2: #261F38ff;
-*/
+--dark-purple-2: #261F38ff; */
+
 
 .card_container{
+  backdrop-filter: blur(5px);
+height: 100vh;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -175,7 +180,8 @@ background-color: #F66969;
 .card { 
   width: 325px;
   height: 400px;
-  background-color: rgb(38, 31, 56);
+  background-color:  rgba(38, 31, 56, 0.538);
+  /* background-color:#6d597a ; */
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
@@ -191,7 +197,8 @@ background-color: #F66969;
 }
 
 .card_content h4 {
-  color: #261F38ff;
+  color: white;
+  /* color: #261F38ff; */
   font-size: 28px;
   margin-bottom: 8px;
 }
@@ -212,7 +219,6 @@ background-color: #F66969;
   background-color: rgba(38, 31, 56, 0.774);
   text-decoration: none;
   border: 2px solid transparent;
-  border-radius: 8px;
   margin-top: 25px;
   color: #fff;
   /* float: inline-end ; */
@@ -436,11 +442,7 @@ tbody td h5 {
   color: #d8cfd0;
   transform: translateY(-5px);
 }
-/* @media only screen and (max-width: 1250px) {
-  header .cards {
-      overflow-x: auto;
-  }
-} */
+
 
 @media only screen and (max-width: 945px) {
   .social-icons a {
@@ -463,6 +465,7 @@ tbody td h5 {
   form input {
     width: 100%;
   }
+
 }
 @media only screen and (max-width: 610px) {
   .social-icons a {
