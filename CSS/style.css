@@ -371,13 +371,11 @@ thead tr {
 }
 
 tbody td h4 {
-  justify-content: first baseline;
   font-size: 20px;
   text-align: center;
 }
 
 tbody td h5 {
-  justify-content: first baseline;
   font-size: 18px;
   text-align: center;
 }
@@ -387,7 +385,6 @@ tbody td h5 {
 }
  
 .social-icons a {
-  justify-content: last baseline;
   text-decoration: none;
   font-size: 32px;
   margin-right: 12px;
