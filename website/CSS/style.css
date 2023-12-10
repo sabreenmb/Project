@@ -192,12 +192,17 @@ footer{
   background-color: rgba(0, 0, 0, 0.5);
 }
 #dataContainer{
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 50px 50px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  position: relative;
+  text-align: center;
   background-color: rgba(0, 0, 0, 0.5);
+}
+#dataList{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
 }
 .container form {
   width: 68%;
