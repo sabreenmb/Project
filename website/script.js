@@ -3,7 +3,6 @@
 document.getElementById("insertForm").addEventListener("submit", function (event) {
   event.preventDefault();
   validate();
-
   let firstName = document.getElementById("firstName").value;
   let lastName = document.getElementById("lastName").value;
   let email = document.getElementById("email").value;
@@ -20,87 +19,57 @@ document.getElementById("insertForm").addEventListener("submit", function (event
   let language = document.getElementById("language").value;
   let message = document.getElementById("message").value;
 
-  // fetch("/insert", {
-  //   //check
-  //   method: "POST",
-  //   headers: {
-  //     "Content-Type": "application/json",
-  //   },
-  //   body: JSON.stringify({
-  //     firstName: firstName, lastName: lastName, email: email, mobile: mobile,
-  //     gender: gender, dateOfBirth: dateOfBirth, language: language, message: message
-  //   }),
-  // }).then(function (response) {
-  //   if (response.ok) {
-  //     getUserData();
-  //   } else {
-  //     alert("Failed to insert data!");
-  //   }
-  // })
-  //   .catch(function (error) {
-  //     console.error("Error:", error);
-  //     alert("An error occurred!");
-  //   });
+  fetch("/insert", {
+    //check
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      firstName: firstName, lastName: lastName, email: email, mobile: mobile,
+      gender: gender, dateOfBirth: dateOfBirth, language: language, message: message
+    }),
+  }).then(function (response) {
+    if (response.ok) {
+      getUserData();
+    } else {
+      alert("Failed to insert data!");
+    }
+  })
+    .catch(function (error) {
+      console.error("Error:", error);
+      alert("An error occurred!");
+    });
 });
 
-// document.getElementById("getComp").addEventListener("submit", function (event) {
-//   event.preventDefault();
-//   getData();
-// });
-// function getData() {
-//   //clear any existing data
-//   const dataList = document.getElementById("insertForm");
-//   while (dataList.firstChild) {
-//     dataList.removeChild(dataList.lastChild);
-//   }
-//   //refresh
-//   fetch("/view")
-//     .then(function (response) {
-//       return response.json();
-//     })
-//     .then(function (data) {
+function getUserData() {
+  //clear any existing data
+  const dataList = document.getElementById("dataList");
+  while (dataList.firstChild) {
+    dataList.removeChild(dataList.lastChild);
+  }
+  //refresh
+  fetch("/view")
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
 
 
-//       data.forEach(function (item) {
-//         let listItem = document.createElement("h1");
-//         listItem.textContent = item.companyName;
-//         dataList.appendChild(listItem);
-//       });
-//     })
-//     .catch(function (error) {
-//       console.error("Error:", error);
-//       alert("An error occurred!");
-//     });
-// }
+      data.forEach(function (item) {
+        let listItem = document.createElement("li");
+        listItem.textContent = item.firstName;
+        dataList.appendChild(listItem);
+      });
+    })
 
-// function getUserData() {
-//   //clear any existing data
-//   const dataList = document.getElementById("dataList");
-//   while (dataList.firstChild) {
-//     dataList.removeChild(dataList.lastChild);
-//   }
-//   //refresh
-//   fetch("/show")
-//     .then(function (response) {
-//       return response.json();
-//     })
-//     .then(function (data) {
+    .catch(function (error) {
+      console.error("Error:", error);
+      alert("An error occurred!");
+    });
+}
 
-
-//       data.forEach(function (item) {
-//         let listItem = document.createElement("li");
-//         listItem.textContent = item.firstName;
-//         dataList.appendChild(listItem);
-//       });
-//     })
-
-//     .catch(function (error) {
-//       console.error("Error:", error);
-//       alert("An error occurred!");
-//     });
-// }
-
-// getUserData();
+getUserData();
 
 
 function validate() {
@@ -108,7 +77,7 @@ function validate() {
   let firstName = document.getElementById("firstName").value;
   let lastName = document.getElementById("lastName").value;
   let email = document.getElementById("email").value;
-  let phoneNumber = document.getElementById("mobile").value;
+  let mobile = document.getElementById("mobile").value;
 
   let gendTemp = document.getElementsByName('gender');
   let gender;
@@ -157,7 +126,7 @@ function validate() {
   if (mobile == "") {
     messages.push("Phone Number is required!");
   } else {
-    if (phoneNumber.length != 10 || !phoneNumber.match(regPhone)) {
+    if (mobile.length != 10 || !mobile.match(regPhone)) {
       messages.push("phone should be 10 numbers only and doesn't contain any letters");
     }
   }
