@@ -1,14 +1,14 @@
 <!--Web Project -Bowling Empire- Sabreen - Lama - Lamya -EB9-->
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Contact Us</title>
-        <link rel="stylesheet" href="CSS/style.css">
-    </head>
-    <body>
-        <div class="contactBackground">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <div class="contactBackground">
         <header>
             <nav>
                 <h3 class="webName">Bowling Empire</h3>
@@ -19,21 +19,23 @@
                     <li><a href="contact.html" class="active">Contact Us</a></li>
                 </ul>
             </nav>
-        </header>    
+        </header>
         <section class="container">
             <form id="insertForm" method="POST" action="/insert">
-                <h1><b>Contact Us</b></h1>
+                <h1>Contact Us</h1>
                 <div class="contact-form">
                     <input name="firstName" type="text" id="firstName" placeholder="Enter your first name" required>
                     <input name="lastName" type="text" id="lastName" placeholder="Enter your last name" required>
                 </div>
                 <div class="contact-form">
-                    <input name="email" type="text" id="email" pattern="[a-zA-Z0-9_\-\.]+@[a-zA-Z0-9_\-\.]+\.[a-zA-Z]{2,5}"
-                    placeholder="someone@example.com" required>
-                    <input name="mobile" type="text" id="mobile" pattern="[0][5][0-9]{8}" placeholder="05********" required>
+                    <input name="email" type="text" id="email"
+                        pattern="[a-zA-Z0-9_\-\.]+@[a-zA-Z0-9_\-\.]+\.[a-zA-Z]{2,5}" placeholder="someone@example.com"
+                        required>
+                    <input name="mobile" type="text" id="mobile" pattern="[0][5][0-9]{8}" placeholder="05********"
+                        required>
                 </div>
                 <div class="contact-form">
-                    <input name="dateOfBirth" type="date" id="dateOfBirth"  required>
+                    <input name="dateOfBirth" type="date" id="dateOfBirth" required>
                     <select name="language" id="language">
                         <option selected>Arabic</option>
                         <option>English</option>
@@ -53,17 +55,13 @@
             </form>
         </section>
         <div id="dataContainer">
-        
-                <h1>Our customers:</h1>
-    
-                <ul id="dataList"></ul>
-
-            
+            <h1>Our customers:</h1>
+            <ul id="dataList"></ul>
         </div>
         <footer>
             <h5>&copy; 2023 Bowling Empire. All rights reserved.</h5>
         </footer>
     </div>
     <script src="script.js"></script>
-  </body>
+</body>
 </html>
