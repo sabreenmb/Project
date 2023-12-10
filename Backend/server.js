@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = 3000; // or any other desired port
+const port = 3001; // or any other desired port
 //setting up DB
 const mysql = require("mysql2");
 const pool = mysql.createPool({

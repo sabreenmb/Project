@@ -191,6 +191,14 @@ footer{
   padding: 50px 50px;
   background-color: rgba(0, 0, 0, 0.5);
 }
+#dataContainer{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 50px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
 .container form {
   width: 68%;
   height: fit-content;
