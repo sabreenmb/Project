@@ -11,11 +11,6 @@ const pool = mysql.createPool({
     database: "BowlingEmpire",
     port: 3306,
 });
-
-//serving static website
-// app.use("/", express.static("website"));
-// app.use("/", express.static("./website/JS"));
-
 app.use("/", express.static("./website"));
 const {check ,validationResult}=require("express-validator");
 const formValidat = formValidate();
@@ -41,19 +36,14 @@ app.post("/insert", formValidat,(req, res) => {
  
     }else{
         res.send("<h1>Sorry we found validation errors with your submition</h1>"+printErrors(errors.array())+"<h2><a href='contact.html'>Click here</a> to return</h2>");
-
     }
  
-    
 });
-
 // View data route
 app.get("/view", (req, res) => {
     const query = "SELECT * FROM contactus";
-
     pool.query(query, (error, result) => {
         if (error) throw error;
-
         res.json(result);
     });
 });
@@ -62,11 +52,8 @@ app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
 
-
 function formValidate() {
-
     return [
-
         check('firstName').isLength({ min: 1, max: 100 }).withMessage('First name must be between 1 and 100')//length
             .isString().withMessage('first name must be string')//string
             .matches('[A-Za-z]+').withMessage('first name should be english')
@@ -94,7 +81,6 @@ function formValidate() {
             .trim().escape()//sanitize and clean
 
     ];
-
 }
 
 // // to print error message
@@ -107,143 +93,3 @@ function printErrors(errArray) {
     }
     return errors.join("");
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// //1. npm initiation 1.1 install js modules(expess, express-validator, mysql2)
-
-// //2.create server
-
-// const express = require('express');
-// const app = express();
-// //3. roating server-serve static website
-// app.use('/', express.static('./website'));
-// app.use(express.urlencoded({ extended: false }));
-
-// //return object will saved in check and result
-// const { check, validationResult } = require('express-validator');
-
-// const formValidat = formValidate();
-
-// //5. read user input from the form
-// app.post('/server', formValidat, (request, response) => {
-
-//     const errors = validationResult(request);
-
-//     if (!errors.isEmpty()) {
-
-//         const msg = "<h1>Sorry, we found errors with your submission.</h1>" +
-//             printErrors(errors.array());
-//         response.send(msg);
-
-//     } else {
-
-//         const fname = request.body.fname;
-//         const lname = request.body.lname;
-//         const mobile = request.body.phone;
-//         const email = request.body.email;
-//         const gend = request.body.gender;
-//         const dob = request.body.birth;
-//         const language = request.body.lang;
-//         const message = request.body.message;
-
-//         addUser(fname, lname, mobile, email, gend, dob, language, message);
-
-//         const msg = "<h1>User Data Recieved:</h1>" +
-//             "<p>Name :" + fname + " " + lname + "</p>" +
-//             "<p>Phone :" + mobile + "</p>" +
-//             "<p>Email :" + email + "</p>" +
-//             "<p>Gender :" + gend + "</p>" +
-//             "<p>DOB :" + dob + "</p>" +
-//             "<p>Language :" + language + "</p>" +
-//             "<p>Message :" + message + "</p>";
-//         response.send(msg);
-//     }
-
-// });
-
-// app.get('/GETDB',(request, response) => {
-//     display();
-// });
-
-
-// //6. Function to validate user input
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// //4. server listening
-// app.listen(2500, () => {
-
-//     console.log("The server is listening on provided port");
-
-// });
-
-// //7. connect to db
-
-// //create connection with mysql
-
-
-// function addUser(fname, lname, mobile, email, gend, dob, language, message) {
-//     const mysql = require("mysql2");
-//     let db = mysql.createConnection({
-//         host: 'localhost',
-//         user: 'root',
-//         password: 'root',
-//         port: '3306',
-//         database: 'babyflix'
-//     });
-//     //connect to db
-//     db.connect(function (err) {
-//         //check for errors
-//         if (err) throw err;
-//         //create SQL command
-//         var sql = "INSERT INTO contactus (firstName, lastName, email, phoneNumber, birthday,gender, language, message) VALUES ('" + fname + "', '" + lname + "','" + email + "', '" + mobile + "', '" + dob + "' , '" + gend + "', '" + language + "','" + message + "')";
-//         //execute SQL command
-//         db.query(sql, function (err, result) {
-//             //check for errors
-//             if (err) throw err;
-//             //if no errors, then successful
-// db.query('SELECT * FROM company', function (err, rows) {
-//         if (err) throw err;
-
-//         console.log('Data received');
-//         console.log(rows);
-//     });
-
-//         });
-//     });
-// }
-
-// function display(){
-    
-
-// }
-
-
-

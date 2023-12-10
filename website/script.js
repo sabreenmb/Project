@@ -1,5 +1,3 @@
-
-
 document.getElementById("insertForm").addEventListener("submit", function (event) {
   event.preventDefault();
   validate();
@@ -167,25 +165,3 @@ function validate() {
     // event.preventDefault();
   }
 }
-
-// function myFunction() {
-//   alert("Input first name field lost focus.");
-// }
-
-// //functon to make onblur event
-// //the enterd name will be in capital letters
-// function blur() {
-//   let x = document.getElementById("fName");
-//   x.value = x.value.toUpperCase();
-// }
-
-// function clearAll() {
-//   document.getElementById("myForm").reset();
-// }
-
-// function start() {
-//   var submitButton = document.getElementById("submitButton");
-//   submitButton.addEventListener("click", validate, false);
-// }
-
-// window.addEventListener("load", start, false);
