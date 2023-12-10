@@ -31,6 +31,7 @@ document.getElementById("insertForm").addEventListener("submit", function (event
     }),
   }).then(function (response) {
     if (response.ok) {
+      alert("inn");
       getUserData();
     } else {
       alert("Failed to insert data!");
@@ -153,10 +154,7 @@ function validate() {
     lastName.length >= 2 && lastName.match(reglName) &&
     mobile.match(regPhone) && email.match(regEmail) &&
     gender != "" && dateOfBirth != "" && language != "" && message != "") {
-    var output = "Thank you!\nName: " + firstName + " " + lastName +
-      "\nPhone: " + mobile + "\nEmail: " + email +
-      "\nGender: " + gender + "\nDOB: " + dateOfBirth +
-      "\nLanguage: " + language + "\nMessage: " + message;
+    var output = "Thank you " + firstName + " " + lastName +" for reasching out Bowling Empire we will contact you as soon as possible. ";
 
     alert(output);
   } 

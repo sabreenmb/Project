@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = 2500; // or any other desired port
+const port = 3000; // or any other desired port
 //setting up DB
 const mysql = require("mysql2");
 const pool = mysql.createPool({
@@ -17,24 +17,34 @@ const pool = mysql.createPool({
 // app.use("/", express.static("./website/JS"));
 
 app.use("/", express.static("./website"));
-
-// const formValidat = formValidate();
+const {check ,validationResult}=require("express-validator");
+const formValidat = formValidate();
 
 // Insert data route
 app.use(express.json());
 //TODO MAKE SURE THIS IS NOT THE REASON 
 app.use(express.urlencoded({ extended: true }));
-app.post("/insert", (req, res) => {
-    const data = { firstName: req.body.firstName, lastName: req.body.lastName, email:req.body.email,mobile:req.body.mobile,
-        gender:req.body.gender,dateOfBirth:req.body.dateOfBirth, language:req.body.language,message:req.body.message };
-    const query = "INSERT INTO contactus SET ?";
+app.post("/insert", formValidat,(req, res) => {
+    const errors=validationResult(req);
+    console.log(errors);
+    if(errors.isEmpty()){
+               const data = { firstName: req.body.firstName, lastName: req.body.lastName, email:req.body.email,mobile:req.body.mobile,
+            gender:req.body.gender,dateOfBirth:req.body.dateOfBirth, language:req.body.language,message:req.body.message };
+        const query = "INSERT INTO contactus SET ?";
+    
+        pool.query(query, data, (error, result) => {
+            if (error) 
+            throw error;
+            // result.send("Data inserted successfully!");
+            res.send("Data inserted successfully!");
+        });
+ 
+    }else{
+        res.send("<h1>Sorry we found validation errors with your submition</h1>"+printErrors(errors.array())+"<h2><a href='contact.html'>Click here</a> to return</h2>");
 
-    pool.query(query, data, (error, result) => {
-        if (error) 
-        throw error;
-        // result.send("Data inserted successfully!");
-        res.send("Data inserted successfully!");
-    });
+    }
+ 
+    
 });
 
 // View data route
@@ -53,39 +63,39 @@ app.listen(port, () => {
 });
 
 
-// function formValidate() {
+function formValidate() {
 
-//     return [
+    return [
 
-//         check('fname').isLength({ min: 1, max: 100 }).withMessage('First name must be between 1 and 100')//length
-//             .isString().withMessage('first name must be string')//string
-//             .matches('[A-Za-z]+').withMessage('first name should be english')
-//             .trim().escape(),
+        check('firstName').isLength({ min: 1, max: 100 }).withMessage('First name must be between 1 and 100')//length
+            .isString().withMessage('first name must be string')//string
+            .matches('[A-Za-z]+').withMessage('first name should be english')
+            .trim().escape(),
 
-//         check('lname').isLength({ min: 1, max: 100 }).withMessage('Last name must be between 1 and 100')//length           
-//             .isString().withMessage('last name must be string')//string
-//             .matches('[A-Za-z]+').withMessage('last name should be english')
-//             .trim().escape(),
+        check('lastName').isLength({ min: 1, max: 100 }).withMessage('Last name must be between 1 and 100')//length           
+            .isString().withMessage('last name must be string')//string
+            .matches('[A-Za-z]+').withMessage('last name should be english')
+            .trim().escape(),
 
-//         check('phone').isLength({ min: 10, max: 10 }).withMessage('Phone must be exactly 10 digits')//length          
-//             .isNumeric().withMessage('Phone must consist of numbers only')//type
-//             .matches('[0-9]{10}').withMessage('Phone must be exactly 12 digits and start with 05')
-//             .trim().escape(),//sanitize and clean
+        check('mobile').isLength({ min: 10, max: 10 }).withMessage('Phone must be exactly 10 digits')//length          
+            .isNumeric().withMessage('Phone must consist of numbers only')//type
+            .matches('[0-9]{10}').withMessage('Phone must be exactly 12 digits and start with 05')
+            .trim().escape(),//sanitize and clean
 
-//         check('email').isLength({ min: 2, max: 200 }).withMessage('Email must be between 2 and 200 chars in length')//length
-//             .isString().withMessage("Email must be of type string")//validate type
-//             .isEmail().withMessage('Email must be in the correct email format e.g., x@y.com')//format
-//             .trim().escape(),//sanitize and clean
+        check('email').isLength({ min: 2, max: 200 }).withMessage('Email must be between 2 and 200 chars in length')//length
+            .isString().withMessage("Email must be of type string")//validate type
+            .isEmail().withMessage('Email must be in the correct email format e.g., x@y.com')//format
+            .trim().escape(),//sanitize and clean
 
-//         check('birth').isDate().withMessage('it is not adate!')//length
-//             .trim().escape(),//sanitize and clean
+        check('dateOfBirth').isDate().withMessage('it is not adate!')//length
+            .trim().escape(),//sanitize and clean
 
-//         check('message').isLength({ min: 2, max: 300 }).withMessage('Message must more than 2 digits')//length
-//             .trim().escape()//sanitize and clean
+        check('message').isLength({ min: 2, max: 300 }).withMessage('Message must more than 2 digits')//length
+            .trim().escape()//sanitize and clean
 
-//     ];
+    ];
 
-// }
+}
 
 // // to print error message
 function printErrors(errArray) {
